@@ -1,0 +1,39 @@
+{
+	"name": "YouTube Video Progress Saver",
+	"version": "0.0.1",
+	"description": "Save progress on YouTube videos",
+	"manifest_version": 2,
+	"icons": {
+		"48": "img/multimedia.svg",
+		"128": "img/multimedia.svg",
+		"256": "img/multimedia.svg",
+		"512": "img/multimedia.svg"
+	},
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.youtube.com/*"
+			],
+			"js": [
+				"youtube.js"
+			]
+		}
+	],
+	"permissions": [
+		"storage"
+	],
+	"browser_action": {
+		"default_title": "YouTube Video Progress Saver",
+		"default_icon": "img/multimedia.svg",
+		"default_popup": "popup.html"
+	},
+	"web_accessible_resources": [
+		"*.js",
+		"*.html"
+	]
+}
